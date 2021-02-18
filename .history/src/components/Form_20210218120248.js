@@ -22,14 +22,13 @@ export const Form = () => {
         }
     }
 
-
     return (
         <form onSubmit={submitHandler}>
-            <div className="form-group">
+            <div>
                 <input
                     type="text"
                     className="form-control"
-                    placeholder="Введите название заметки"
+                    placeHolder="Введите заметку"
                     value={value}
                     onChange={e => setValue(e.target.value)}
                 />

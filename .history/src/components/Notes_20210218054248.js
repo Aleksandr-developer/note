@@ -1,6 +1,7 @@
 import React from 'react'
 
-export const Notes = ({ notes, onRemove }) => (
+export const Notes = ({ notes }) => {
+    return (
         <ul class="list-group">
             {notes.map(note => (
                 <li
@@ -15,7 +16,6 @@ export const Notes = ({ notes, onRemove }) => (
                     <button
                         type="button"
                         class="btn btn-outline-danger btn-sm"
-                        onClick={() => onRemove(note.id)}
                     >
                         &times;
                     </button>
@@ -23,3 +23,4 @@ export const Notes = ({ notes, onRemove }) => (
             ))}
         </ul>
     )
+}

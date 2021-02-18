@@ -9,27 +9,25 @@ export const Form = () => {
 
     const submitHandler = event => {
         event.preventDefault()
-
         if (value.trim()) {
             firebase.addNote(value.trim()).then(() => {
                 alert.show('Заметка была создана', 'success')
             }).catch(() => {
-                alert.show('Что-то пошло не так', 'danger')
+                alert.show('Ошибка', 'danger')
             })
             setValue('')
         } else {
-            alert.show('Введите название заметки')
+            alert.show('Создайте заметку')
         }
     }
 
-
     return (
         <form onSubmit={submitHandler}>
-            <div className="form-group">
+            <div>
                 <input
                     type="text"
                     className="form-control"
-                    placeholder="Введите название заметки"
+                    placeHolder="Введите заметку"
                     value={value}
                     onChange={e => setValue(e.target.value)}
                 />
